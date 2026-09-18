@@ -8,6 +8,7 @@
     "start": "tsx src/main.ts",
     "typecheck": "tsc --noEmit",
     "build": "tsc",
+    "db:check": "tsx scripts/db/check.ts",
     "db:clean": "tsx scripts/db/clean.ts",
     "db:reset": "tsx scripts/db/reset.ts",
     "seed:base": "tsx scripts/seed/base.ts",
