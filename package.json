@@ -1,0 +1,33 @@
+{
+  "name": "backend-foundation-intensive",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "start": "tsx src/main.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "db:clean": "tsx scripts/db/clean.ts",
+    "db:reset": "tsx scripts/db/reset.ts",
+    "seed:base": "tsx scripts/seed/base.ts",
+    "seed:day1:indexes": "tsx scripts/seed/day1-indexes.ts",
+    "seed:scenario:n-plus-one": "tsx scripts/seed/scenario/n-plus-one.ts"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "pg": "^8.16.3",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.26",
+    "zod": "^4.1.5"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^10.0.0",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.3.0",
+    "@types/pg": "^8.15.5",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  }
+}
