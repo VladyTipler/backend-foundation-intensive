@@ -7,9 +7,9 @@ services:
       POSTGRES_PASSWORD: app
       POSTGRES_DB: job_tracker
     ports:
-      - "5432:5432"
+      - "127.0.0.1:5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U app -d job_tracker"]
       interval: 5s
@@ -20,7 +20,7 @@ services:
     image: redis:7-alpine
     container_name: backend-intensive-redis
     ports:
-      - "6379:6379"
+      - "127.0.0.1:6379:6379"
     command: redis-server --appendonly yes
     volumes:
       - redis_data:/data
@@ -29,7 +29,7 @@ services:
     image: adminer:latest
     container_name: backend-intensive-adminer
     ports:
-      - "8080:8080"
+      - "127.0.0.1:8080:8080"
     depends_on:
       postgres:
         condition: service_healthy
