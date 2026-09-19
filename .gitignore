@@ -3,3 +3,11 @@ dist/
 .env
 .DS_Store
 *.log
+
+var/
+
+*.private.json
+
+.env.local
+
+.env.*.local

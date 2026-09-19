@@ -11,15 +11,17 @@
     "db:check": "tsx scripts/db/check.ts",
     "db:clean": "tsx scripts/db/clean.ts",
     "db:reset": "tsx scripts/db/reset.ts",
-    "seed:base": "tsx scripts/seed/base.ts",
-    "seed:day1:indexes": "tsx scripts/seed/day1-indexes.ts",
-    "seed:scenario:n-plus-one": "tsx scripts/seed/scenario/n-plus-one.ts",
+    "seed:base": "node scripts/lab/index.mjs prepare 1",
+    "seed:day1:indexes": "node scripts/lab/index.mjs indexes",
+    "seed:scenario:n-plus-one": "node scripts/lab/index.mjs nplusone",
     "web:install": "npm --prefix web ci",
     "web:dev": "npm --prefix web run dev",
     "web:build": "npm --prefix web run build",
     "web:typecheck": "npm --prefix web run typecheck",
     "web:test": "npm --prefix web test",
-    "web:preview": "npm --prefix web run preview"
+    "web:preview": "npm --prefix web run preview",
+    "lab": "node scripts/lab/index.mjs",
+    "lab:test": "node --test tests/lab/core.test.mjs"
   },
   "dependencies": {
     "dotenv": "^17.2.2",
